@@ -21,18 +21,16 @@ def generate_random_datetime(start_date_str, end_date_str, format_str):
 
     return formatted_datetime
 
-def generate_batch_faker():
-
-    faker = Faker("ko_KR")
+def generate_batch():
 
     card_number = str(random.randint(pow(10, 16), pow(10, 17)-1))
     card_type = random.choice(card_type_list)
-    card_holder_name = faker.name()
+    card_holder_name = "장원영"
     expiration_date = str(random.randint(00,12))+"/"+str(random.randint(2019,2029))
     cvv = str(random.randint(100, 999))
 
-    adress = faker.address()
-    postal_code = faker.postcode()
+    adress = random.choice(address_list)
+    postal_code = str(random.randint(10000, 99999))
 
     amount = str(random.randint(10, 100)*1000)
     merchant = random.choice(merchant_list)
@@ -66,7 +64,7 @@ def generate_stream_faker():
 
     return single_stream
 
-#faker 쓰면 너무 느려서
+# Faker 쓰면 데이터 생성 속도부터가 너무 느려
 def generate_stream():
     
     card_number = str(random.randint(pow(10, 16), pow(10, 17)-1))
@@ -86,10 +84,13 @@ def generate_stream():
 
     return single_stream
 
-def upload_s3_stream(single_data):
-    bucket_name = 'searchnewsbucket'
-    file_name = 'your_file_name'
-    s3_key = 'stream/'+file_name  # S3에 저장될 파일 경로 및 이름
+# 일단 Kafka로 보내고 Kafka에서 S3로 올릴 것이므로 주석
+# def upload_s3_stream(single_data):
+#     bucket_name = 'searchnewsbucket'
+#     file_name = 'your_file_name'
+#     s3_key = 'stream/'+file_name+'.json'  # S3에 저장될 파일 경로 및 이름
 
-    s3 = boto3.client('s3',aws_access_key_id='', aws_secret_access_key='')
-    s3.put_object(Bucket=bucket_name, Key=s3_key, Body=single_data)
+#     s3 = boto3.client('s3',aws_access_key_id='', aws_secret_access_key='')
+#     s3.put_object(Bucket=bucket_name, Key=s3_key, Body=single_data)
+
+# upload_s3_stream(generate_stream())
