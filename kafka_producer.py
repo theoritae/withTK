@@ -25,4 +25,3 @@ for i in range(4):
 # 메시지 전송 완료 대기
 producer.flush()
 
-#centos에서 docker-compose.yml로 띄운 zookeeper, broker로 정상 동작 확인
