@@ -1,0 +1,11 @@
+filebeat.inputs:
+- type: kafka
+  hosts: ["111.111.111.111:9092"]
+  topics: ["your_topic"]
+  group_id: "your_consumer_group"
+  consumer_group_reset_offsets: false
+
+output.logstash:
+  hosts: ["logstash:5044"]
+
+setup.ilm.enabled: false

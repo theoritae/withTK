@@ -1,0 +1,25 @@
+version: '3'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.14.0
+    ports:
+      - 9200:9200
+      - 9300:9300
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.14.0
+    volumes:
+      - /path/to/logstash/config:/usr/share/logstash/config
+    depends_on:
+      - elasticsearch
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.14.0
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:7.14.0
+    volumes:
+      - /path/to/filebeat/config:/usr/share/filebeat
+    depends_on:
+      - logstash
