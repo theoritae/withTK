@@ -1,9 +1,9 @@
 from confluent_kafka import Consumer, KafkaException, KafkaError
 
 # Kafka 서버 및 토픽 설정
-bootstrap_servers = '192.168.56.104:9092'
-topic = 'my-topic'
-group_id = 'my-consumer-group'
+bootstrap_servers = '192.168.206.131:9092'
+topic = 'stream-card'
+group_id = 's3_upload_group'
 
 # Kafka 컨슈머 구성
 conf = {
