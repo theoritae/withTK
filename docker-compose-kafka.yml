@@ -1,0 +1,21 @@
+version: '2'
+services:
+  zookeeper:
+    container_name: centos-zookeeper
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    container_name: centos-kafka
+    image: wurstmeister/kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 192.168.206.131
+      KAFKA_ADVERTISED_PORT: 9092
+      KAFKA_CREATE_TOPICS: "stream-card:3:2" #topic:partitions:replications
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
