@@ -12,7 +12,7 @@ services:
     container_name: elk_logstash
     image: docker.elastic.co/logstash/logstash:7.14.0
     volumes:
-      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - /root/elk/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
     ports:
       - 5044:5044
     depends_on:

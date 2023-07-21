@@ -12,3 +12,8 @@ consumer가 각각 다른 프로세스로 뜬다고 생각하고 consumer 자체
 
 #excuse
 kubernetes 때문에 바빠...
+
+docker rm elk_kibana
+docker rm elk_logstash
+docker rm elk_filebeat
+docker rm elk_elasticsearch

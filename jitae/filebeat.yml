@@ -6,6 +6,6 @@ filebeat.inputs:
   consumer_group_reset_offsets: false
 
 output.logstash:
-  hosts: ["logstash:5044"]
+  hosts: ["192.168.206.131:5044"]
 
 setup.ilm.enabled: false
