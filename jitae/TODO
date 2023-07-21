@@ -1,19 +1,14 @@
 #recap
-centos에서 docker-compose.yml로 띄운 zookeeper, broker로 정상 동작 확인
-producer로 0.01초에 100개까지 쏴봤는데 아주 잘 된다...!
-이래서 우리네 선조들은 kafka kafka 하셨구나
+#centos에서 docker-compose.yml로 띄운 zookeeper, broker로 정상 동작 확인
+#producer로 0.01초에 100개까지 쏴봤는데 아주 잘 된다...!
+#이래서 우리네 선조들은 kafka kafka 하셨구나
 
 #todo
-S3에 upload하는 consumer
-ELK로 보내는 consumer
-consumer 객체화(?)해서 S3 uploader에서 call하고 ELK로 보낼 때 call 하자? 아닌가? 아니다!
-consumer가 각각 다른 프로세스로 뜬다고 생각하고 consumer 자체를 나누는 게 좋겠다!
-오히려 kafka_producer에서 stream_card_generator를 import하고 message에 generate_stream()을 호출하면 되겠네?
+filebeat.yml
+logstash.conf
+kibana.yml
+docker-compose.yml (for kafka)
+docker-compose.yml (for elk)
 
 #excuse
 kubernetes 때문에 바빠...
-
-docker rm elk_kibana
-docker rm elk_logstash
-docker rm elk_filebeat
-docker rm elk_elasticsearch

@@ -19,7 +19,7 @@ def delivery_report(err, msg):
 
 # 메시지 생성 및 전송
 for i in range(5):
-    message = "docker test"
+    message = "messagemessagemessmessagemessagemessagemessage"
     producer.produce(topic, value=message, callback=delivery_report)
 
 # 메시지 전송 완료 대기
