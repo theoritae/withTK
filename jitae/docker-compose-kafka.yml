@@ -5,11 +5,6 @@ services:
     image: wurstmeister/zookeeper
     ports:
       - "2181:2181"
-    deploy:
-      resources:
-        limits:
-          memory: 500m
-          cpus: '0.5'
 
   kafka:
     container_name: kafka
@@ -25,8 +20,3 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    deploy:
-      resources:
-        limits:
-          memory: 500m
-          cpus: '0.5'

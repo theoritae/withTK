@@ -18,8 +18,8 @@ def delivery_report(err, msg):
         print(f'Message delivered to {msg.topic()} [{msg.partition()}]')
 
 # 메시지 생성 및 전송
-for i in range(5):
-    message = "messagemessagemessmessagemessagemessagemessage"
+for i in range(10):
+    message = "testmessage testmessage testmessage testmessage testmessage testmessage testmessage testmessage testmessage "
     producer.produce(topic, value=message, callback=delivery_report)
 
 # 메시지 전송 완료 대기

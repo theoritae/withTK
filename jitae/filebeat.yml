@@ -5,7 +5,8 @@ filebeat.inputs:
   group_id: "filebeat_group"
   consumer_group_reset_offsets: false
 
-output.logstash:
-  hosts: ["192.168.206.131:5044"]
+output.kafka:
+  hosts: ["192.168.206.131:9092"]
+  topic: "from-filebeat"
 
 setup.ilm.enabled: false
