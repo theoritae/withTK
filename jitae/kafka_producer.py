@@ -1,8 +1,8 @@
 from confluent_kafka import Producer
-
+from stream_card_generator import generate_stream
 # Kafka 서버 및 토픽 설정
 bootstrap_servers = '192.168.206.131:9092'
-topic = 'stream-card'
+topic = 'from-filebeat'
 
 # Kafka 프로듀서 구성
 conf = {'bootstrap.servers': bootstrap_servers}
@@ -19,7 +19,7 @@ def delivery_report(err, msg):
 
 # 메시지 생성 및 전송
 for i in range(10):
-    message = "testmessage testmessage testmessage testmessage testmessage testmessage testmessage testmessage testmessage "
+    message = generate_stream()
     producer.produce(topic, value=message, callback=delivery_report)
 
 # 메시지 전송 완료 대기

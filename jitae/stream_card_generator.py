@@ -84,6 +84,8 @@ def generate_stream():
 
     return single_stream
 
+print(generate_stream())
+
 # 일단 Kafka로 보내고 Kafka에서 S3로 올릴 것이므로 주석
 # def upload_s3_stream(single_data):
 #     bucket_name = 'searchnewsbucket'
