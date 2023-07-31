@@ -15,4 +15,6 @@
 #todo
 kafka consumer로 s3 uploader에 데이터 담아서 보내기
 s3 partitioning 날짜로
-
+filebeat 생략
+log generator > kafka broker > logstash > elsaticsearch > kibana
+                             > s3 upload
