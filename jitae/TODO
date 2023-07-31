@@ -8,8 +8,11 @@
 #kibana.yml
 #docker-compose.yml (for kafka)
 #docker-compose.yml (for elk)
+#kibana 사용하기
+#elasticsearch index 잡기
+#데이터 구조 파악
 
 #todo
-kibana 사용하기
-elasticsearch index 잡기
-데이터 구조 파악
+kafka consumer로 s3 uploader에 데이터 담아서 보내기
+s3 partitioning 날짜로
+
