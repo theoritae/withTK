@@ -1,8 +1,10 @@
 from confluent_kafka import Producer
 from stream_card_generator import generate_stream
+import config_loader
+
 # Kafka 서버 및 토픽 설정
-bootstrap_servers = '192.168.206.131:9092'
-topic = 'from-filebeat'
+bootstrap_servers = config_loader.bootstrap_servers
+topic = config_loader.topic
 
 # Kafka 프로듀서 구성
 conf = {'bootstrap.servers': bootstrap_servers}
