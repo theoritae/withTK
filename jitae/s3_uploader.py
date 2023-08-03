@@ -11,7 +11,7 @@ parsed = json.loads(result)
 ACCESS_KEY = config_loader.access_key
 SECRET_KEY = config_loader.secret_key
 
-bucket_name = config_loader.bucket_name #bucket_name 이름에 따라 변경
+bucket_name = config_loader.stream_input_bucket #bucket_name 이름에 따라 변경
 file_name = config_loader.file_name     #search_news.py에서 받아 오는 걸로?
 
 def upload_file_s3(bucket_name, file_name, file):
