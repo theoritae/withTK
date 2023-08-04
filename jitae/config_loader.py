@@ -18,8 +18,8 @@ stream_input_bucket = config.get('S3', 'stream_input_bucket')
 stream_file_name = config.get('S3', 'file_name')
 
 # s3 batch input
-batch_input_bucket = config.get('', '')
+batch_input_bucket = config.get('S3', 'batch_input_bucket')
 
 # s3 batch output
-batch_output_bucket = config.get('', '')
-batch_file_name = config.get('', '')
+batch_output_bucket = config.get('S3', 'batch_output_bucket')
+batch_file_name = config.get('S3', 'batch_file_name')
