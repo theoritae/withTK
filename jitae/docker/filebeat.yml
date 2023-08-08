@@ -1,0 +1,12 @@
+filebeat.inputs:
+- type: kafka
+  hosts: ["192.168.206.131:9092"]
+  topics: ["stream-card"]
+  group_id: "filebeat_group"
+  consumer_group_reset_offsets: false
+
+output.kafka:
+  hosts: ["192.168.206.131:9092"]
+  topic: "from-filebeat"
+
+setup.ilm.enabled: false
